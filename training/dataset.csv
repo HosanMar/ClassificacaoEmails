@@ -1,0 +1,223 @@
+texto,categoria
+"Obrigado pela ajuda. Pode enviar o backup agora?",Produtivo
+"Obrigado pela ajuda. Foi muito útil.",Improdutivo
+"Parabéns pelo sistema! Pode liberar acesso para o novo dev?",Produtivo
+"Parabéns pelo sistema! Ficou ótimo.",Improdutivo
+"Fiquei feliz com o resultado. Pode validar os dados?",Produtivo
+"Fiquei feliz com o resultado. Sucesso!",Improdutivo
+"Olá! Só queria agradecer pela ajuda no relatório de ontem.",Improdutivo
+"O time todo merece parabéns pela entrega!",Improdutivo
+"Adorei a nova dashboard! Parabéns à equipe.",Improdutivo
+"Excelente trabalho no código!",Improdutivo
+"Por favor, pode revisar o relatório até 17h?",Produtivo
+"Obrigado! Pode subir a versão final até amanhã?",Produtivo
+"Consegui identificar a causa do erro, segue análise.",Improdutivo
+"A atualização do sistema foi concluída com sucesso.",Improdutivo
+"A tarefa foi concluída com sucesso.",Improdutivo
+"Pode confirmar o recebimento até o fim do dia?",Produtivo
+"Favor validar o orçamento anexado.",Produtivo
+"Por favor, pode revisar o relatório até 17h? Preciso enviar ao cliente.",Produtivo
+"Obrigado pela ajuda. Agora, pode rodar o teste no ambiente de homologação?",Produtivo
+"Excelente trabalho! Pode subir a versão final para produção até amanhã?",Produtivo
+"Bom dia! Poderia atualizar o status do chamado?",Produtivo
+"Olá, você conseguiu verificar o relatório que pedi ontem?",Produtivo
+"Segue em anexo a documentação revisada.",Produtivo
+"Preciso que confirme o horário da reunião de amanhã.",Produtivo
+"Obrigado por resolver o problema rapidamente!",Produtivo
+"Pode liberar o acesso ao sistema para o colaborador novo?",Produtivo
+"Enviei os arquivos solicitados, pode conferir?",Produtivo
+"Você poderia revisar este documento antes do envio?",Produtivo
+"A correção foi aplicada, pode testar novamente.",Produtivo
+"Atualizei o dashboard com os dados de hoje.",Produtivo
+"Consegue me enviar a versão final até o fim do dia?",Produtivo
+"Precisamos de uma aprovação para prosseguir com o orçamento.",Produtivo
+"A reunião foi reagendada para 16h.",Produtivo
+"Consegui identificar a causa do erro, segue análise.",Produtivo
+"Pode validar se os cálculos estão corretos?",Produtivo
+"Deixei as informações organizadas na planilha.",Produtivo
+"Você pode confirmar se recebeu o contrato assinado?",Produtivo
+"Segue abaixo o resumo das atividades concluídas.",Produtivo
+"Estou com uma dúvida na etapa de integração, pode ajudar?",Produtivo
+"Pode revisar o código antes de subir para produção?",Produtivo
+"A apresentação está pronta, segue anexa.",Produtivo
+"Atualizei o documento com as alterações solicitadas.",Produtivo
+"Pode conferir se o ticket ainda está em aberto?",Produtivo
+"Terminei o relatório mensal, pode dar uma olhada?",Produtivo
+"Enviei o pedido para aprovação, aguardo retorno.",Produtivo
+"Você pode verificar a inconsistência apontada no sistema?",Produtivo
+"Estamos prontos para iniciar os testes.",Produtivo
+"Consegue me enviar os dados atualizados?",Produtivo
+"A planilha já está disponível na pasta do projeto.",Produtivo
+"Enviei os detalhes do orçamento, pode revisar?",Produtivo
+"Pode me informar o prazo de entrega desse item?",Produtivo
+"A atualização do sistema foi concluída com sucesso.",Produtivo
+"Precisamos alinhar os próximos passos do projeto.",Produtivo
+"Você está disponível para uma call às 15h?",Produtivo
+"O cliente pediu uma atualização, consegue responder?",Produtivo
+"Segue a versão corrigida do contrato.",Produtivo
+"Pode validar se as informações estão completas?",Produtivo
+"Estou enviando o manual finalizado.",Produtivo
+"A documentação foi revisada conforme solicitado.",Produtivo
+"Consegui concluir a tarefa, pode verificar?",Produtivo
+"Você pode me encaminhar a lista atualizada?",Produtivo
+"Estarei disponível para reunião a partir das 10h.",Produtivo
+"Consegue validar essa alteração no ambiente de teste?",Produtivo
+"A proposta está pronta, segue para validação.",Produtivo
+"Estamos aguardando a confirmação do fornecedor.",Produtivo
+"Os dados foram atualizados na plataforma.",Produtivo
+"Segue abaixo o andamento das entregas.",Produtivo
+"Pode verificar por que o sistema não está respondendo?",Produtivo
+"Estou enviando o backup solicitado.",Produtivo
+"Ajustei as permissões do usuário.",Produtivo
+"Você pode revisar essa parte da documentação?",Produtivo
+"O relatório foi aprovado, seguimos para a próxima etapa.",Produtivo
+"Pode me informar a versão do software instalada?",Produtivo
+"A tarefa foi adicionada ao board do projeto.",Produtivo
+"Você conseguiu verificar o chamado #231?",Produtivo
+"Consegue me enviar o histórico desse processo?",Produtivo
+"Já está disponível no drive para consulta.",Produtivo
+"Enviei o e-mail ao cliente, segue cópia.",Produtivo
+"Você pode adicionar esse item na sprint?",Produtivo
+"O deploy foi concluído sem erros.",Produtivo
+"Conseguiu testar o módulo atualizado?",Produtivo
+"Segue diagrama com as alterações propostas.",Produtivo
+"Pode revisar o layout antes de aprovar?",Produtivo
+"Consegui reproduzir o erro no ambiente de teste.",Produtivo
+"Você pode enviar o arquivo original?",Produtivo
+"Precisamos preencher o formulário até amanhã.",Produtivo
+"Coloquei os prints na pasta compartilhada.",Produtivo
+"Pode confirmar se o pagamento foi registrado?",Produtivo
+"A análise de risco está pronta para revisão.",Produtivo
+"Segue informação atualizada do cliente.",Produtivo
+"A importação dos dados foi concluída.",Produtivo
+"Consegue verificar o log do servidor?",Produtivo
+"Estou enviando a minuta para aprovação.",Produtivo
+"Você pode rodar os testes novamente?",Produtivo
+"Atualizei o repositório com a última versão.",Produtivo
+"Pode conferir a estrutura do banco de dados?",Produtivo
+"A tarefa foi concluída com sucesso.",Produtivo
+"Consegue validar a configuração do firewall?",Produtivo
+"O documento passou pela revisão técnica.",Produtivo
+"Você pode liberar o acesso ao diretório X?",Produtivo
+"Estou enviando o cronograma atualizado.",Produtivo
+"Consegue confirmar se a nota foi emitida?",Produtivo
+"O relatório foi encaminhado à diretoria.",Produtivo
+"Você pode checar a disponibilidade do equipamento?",Produtivo
+"Terminei a revisão do texto.",Produtivo
+"Pode atualizar o status na plataforma?",Produtivo
+"Encontrei uma inconsistência, segue print.",Produtivo
+"Conseguiu validar o pedido anexado?",Produtivo
+"Atualizei o manual com as novas instruções.",Produtivo
+"Você pode revisar o orçamento final?",Produtivo
+"Aguardo sua confirmação para prosseguir.",Produtivo
+"Segue tabela consolidada conforme solicitado.",Produtivo
+"Ajustei os campos obrigatórios no formulário.",Produtivo
+"Pode confirmar a agenda da próxima semana?",Produtivo
+"Enviei a lista revisada.",Produtivo
+"Os testes automatizados rodaram corretamente.",Produtivo
+"Você pode revisar esse fluxo?",Produtivo
+"A tarefa foi movida para 'em revisão'.",Produtivo
+"Segue relatório completo dos últimos 30 dias.",Produtivo
+"Consegui configurar o ambiente com sucesso.",Produtivo
+"Pode validar o comportamento esperado?",Produtivo
+"Enviei a gravação da reunião de ontem.",Produtivo
+"Bom dia! Espero que sua semana esteja indo bem.",Improdutivo
+"Obrigado novamente pela ajuda ontem!",Improdutivo
+"Parabéns pelo ótimo trabalho!",Improdutivo
+"Feliz aniversário! Tudo de bom!",Improdutivo
+"Apenas passando para desejar um ótimo dia.",Improdutivo
+"Obrigado pelo retorno rápido!",Improdutivo
+"Ótimo final de semana para você!",Improdutivo
+"Espero que esteja tudo bem por aí.",Improdutivo
+"Obrigado pela atenção de sempre.",Improdutivo
+"Tenha uma excelente semana!",Improdutivo
+"Fico muito feliz pelo reconhecimento!",Improdutivo
+"Obrigado pela compreensão.",Improdutivo
+"Parabéns pela iniciativa!",Improdutivo
+"Feliz ano novo! Muito sucesso!",Improdutivo
+"Obrigado pelo aviso!",Improdutivo
+"Ótima notícia! Fiquei muito contente.",Improdutivo
+"Obrigado, isso ajudou bastante!",Improdutivo
+"Agradeço demais o apoio!",Improdutivo
+"Foi um prazer conversar com você!",Improdutivo
+"Bom descanso!",Improdutivo
+"Estimo melhoras!",Improdutivo
+"Fico feliz que tenha dado tudo certo!",Improdutivo
+"Obrigado pela indicação!",Improdutivo
+"Feliz feriado!",Improdutivo
+"Agradeço pela gentileza.",Improdutivo
+"Fiquei muito satisfeito com o resultado!",Improdutivo
+"Obrigado por avisar!",Improdutivo
+"Tenha uma boa noite.",Improdutivo
+"Foi ótimo trabalhar com você nesse projeto!",Improdutivo
+"Obrigado por compartilhar!",Improdutivo
+"Que bom saber!",Improdutivo
+"Desejo muito sucesso para você!",Improdutivo
+"Agradeço o retorno!",Improdutivo
+"Feliz sexta-feira!",Improdutivo
+"Obrigado pela confiança!",Improdutivo
+"Tenha um excelente feriado!",Improdutivo
+"Aproveite seu descanso!",Improdutivo
+"Obrigado pelos elogios!",Improdutivo
+"Que você tenha um dia abençoado.",Improdutivo
+"Fiquei muito feliz com a novidade!",Improdutivo
+"Agradeço pelo apoio de todos.",Improdutivo
+"Obrigado, você é sempre muito prestativo.",Improdutivo
+"Ótimo saber disso!",Improdutivo
+"Parabéns pela conquista!",Improdutivo
+"Foi ótimo participar!",Improdutivo
+"Excelente notícia!",Improdutivo
+"Obrigado pela consideração.",Improdutivo
+"Fiquei muito contente com sua mensagem.",Improdutivo
+"Desejo um ótimo trabalho para você.",Improdutivo
+"Obrigado pela gentileza de avisar.",Improdutivo
+"Torcendo para que dê tudo certo!",Improdutivo
+"Estou muito feliz com o resultado!",Improdutivo
+"Obrigado pelo incentivo!",Improdutivo
+"Foi ótimo te ver hoje!",Improdutivo
+"Um abraço!",Improdutivo
+"Fico feliz em poder ajudar!",Improdutivo
+"Obrigado, tenha um ótimo dia!",Improdutivo
+"Meus parabéns novamente!",Improdutivo
+"Tenha uma semana maravilhosa!",Improdutivo
+"Boa sorte na apresentação!",Improdutivo
+"Obrigado! Agradeço muito!",Improdutivo
+"Fico contente que tenha resolvido!",Improdutivo
+"Que bom que deu certo!",Improdutivo
+"Bom final de tarde!",Improdutivo
+"Desejo uma ótima noite.",Improdutivo
+"Obrigado por tudo!",Improdutivo
+"Parabéns pelo empenho!",Improdutivo
+"Muito obrigado pela sua mensagem!",Improdutivo
+"Só queria agradecer.",Improdutivo
+"Obrigado pela parceria de sempre.",Improdutivo
+"Que sua semana seja incrível!",Improdutivo
+"Bom almoço!",Improdutivo
+"Agradeço pela lembrança!",Improdutivo
+"Conte sempre comigo!",Improdutivo
+"Obrigada pela atenção!",Improdutivo
+"Feliz dia das mães!",Improdutivo
+"Que Deus abençoe seu dia!",Improdutivo
+"Foi ótimo te reencontrar!",Improdutivo
+"Muito feliz por essa conquista!",Improdutivo
+"Obrigado e sucesso!",Improdutivo
+"Mais uma vez, obrigado!",Improdutivo
+"Desejo muita luz e paz!",Improdutivo
+"Fiquei muito feliz pela mensagem!",Improdutivo
+"Você é incrível, obrigado!",Improdutivo
+"Bom domingo pra você!",Improdutivo
+"Obrigado, ajudou sim!",Improdutivo
+"Muito obrigado por tudo!",Improdutivo
+"Parabéns e muito sucesso!",Improdutivo
+"Foi um prazer ajudar!",Improdutivo
+"Muito feliz com isso!",Improdutivo
+"Boa noite!",Improdutivo
+"Bom dia!",Improdutivo
+"Obrigado e bom descanso!",Improdutivo
+"Feliz páscoa!",Improdutivo
+"Agradeço muito seu suporte!",Improdutivo
+"Obrigado, tenha uma boa semana!",Improdutivo
+"Ótima quarta-feira pra você!",Improdutivo
+"Fiquei feliz em saber disso!",Improdutivo
+"Obrigado pela rápida resposta!",Improdutivo
+"Tenha um excelente final de semana!",Improdutivo

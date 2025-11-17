@@ -1,0 +1,7 @@
+Flask
+transformers
+torch
+PyPDF2
+numpy
+google-cloud-storage
+

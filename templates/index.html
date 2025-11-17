@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sistema de classificação de emails</title>
+
+  <!-- Bootstrap 4 (igual ao que você estava usando) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
+  <!-- ícones simples -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --teal:#2b6b74;
+      --muted:#f2f5f5;
+      --accent:#7a3e2f; /* cor para textos das sugestões */
+      --card-border:#aac0c3;
+    }
+
+    body{    
+      background: #9496a1;
+      justify-content: center;   /* Centraliza horizontalmente */
+      align-items: flex-start;    /* Alinha verticalmente no topo (ou center se quiser no meio) */
+      font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      color:#09323a;
+      padding:40px 0;
+    }
+
+    .container {
+      max-width: 600px;           /* Limita a largura */
+      width: 100%;
+      text-align: center;         /* Centraliza textos */
+    }
+    
+
+    .wrap {
+      max-width:720px;
+      margin:0 auto;
+    }
+
+    .panel {
+      background:var(--muted);
+      border-radius:18px;
+      border:2px solid var(--card-border);
+      padding:34px 40px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+
+    .title {
+      text-align:center;
+      color:var(--teal);
+      font-size:32px;
+      font-weight:600;
+      margin-bottom:20px;
+    }
+
+    .subtext {
+      text-align:center;
+      color: #234b4f;
+      margin-bottom:18px;
+      font-size:16px;
+    }
+
+    /* file input group */
+    .file-row {
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .custom-file {
+      flex:1;
+    }
+
+    .file-label {
+      font-size:14px;
+      color:#234b4f;
+      margin-bottom:8px;
+      display:block;
+    }
+
+    .btn-clear {
+      min-width:44px;
+      height:44px;
+      border-radius:8px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(0,0,0,0.05);
+      background:white;
+      color:#6b6b6b;
+      cursor:pointer;
+    }
+
+    textarea#textInput{
+      border-radius:8px;
+      border:1px solid #b7c6c7;
+      padding:12px;
+      min-height:190px;
+      min-width: 500px;
+      resize:vertical;
+      font-size:15px;
+    }
+
+    .btn-primary-custom{
+      display:block;
+      margin:26px auto 0;
+      background:var(--teal);
+      color:white;
+      border:none;
+      border-radius:10px;
+      padding:12px 36px;
+      font-size:18px;
+    }
+
+    /* Resultado */
+    .result {
+      margin-top:28px;
+      text-align:center;
+    }
+
+    .result h3 {
+      color:var(--teal);
+      font-weight:600;
+      margin-bottom:18px;
+    }
+
+    .result-box {
+      text-align:left;
+      border-radius:10px;
+      border:1px solid #cfe6e7;
+      padding:14px;
+      background:white;
+    }
+
+    .category-row {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #e0eef0;
+      margin-bottom:14px;
+      background:#ffffff;
+    }
+
+    .cat-icon {
+      width:36px;height:36px;border-radius:8px;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(180deg,#e6f3f3,#dff0ef);
+      color:var(--teal); font-size:18px;
+      border:1px solid #cde6e6;
+    }
+
+    .cat-text { font-weight:600; color:#234b4f; font-size:16px; }
+
+    .suggestions {
+      margin-top:6px;
+      border-radius:8px;
+      border:1px solid #e0eef0;
+      background:#fff;
+      padding:14px;
+    }
+
+    .sugg-title {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:8px;
+      color:#2b6b74;
+      font-weight:600;
+    }
+
+    .sugg-list {
+      margin:0;
+      padding-left:18px;
+      color:var(--accent);
+      font-weight:500;
+      line-height:1.6;
+    }
+
+    .send-again {
+      display:block;
+      margin:18px auto 0;
+      background:var(--teal);
+      color:white;
+      border:none;
+      padding:10px 26px;
+      border-radius:10px;
+      font-size:16px;
+    }
+
+    /* small responsive tweaks */
+    @media (max-width:576px){
+      .panel { padding:22px; border-radius:14px; }
+      .title { font-size:24px; }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="panel">
+      <div id="form-view">
+        <div class="title">Sistema de classificação de emails</div>
+        <div class="subtext">Insira um arquivo de email do tipo <strong>.pdf</strong> ou <strong>.txt</strong> — ou cole o email no campo abaixo</div>
+
+        <label class="file-label">Arquivo (.txt / .pdf)</label>
+        <div class="file-row mb-3">
+          <div class="custom-file">
+            <input type="file" class="form-control-file" id="fileInput" name="arquivo" accept=".txt,.pdf">
+          </div>
+          <button id="clearFileBtn" class="btn-clear d-none" title="Remover arquivo">&times;</button>
+        </div>
+
+        <label class="file-label">Texto do email</label>
+        <textarea id="textInput" name="texto" placeholder="Insira o texto do email aqui..."></textarea>
+
+        <button id="submitBtn" class="btn-primary-custom">Classificar</button>
+      </div>
+
+      <div id="result-view" style="display:none;">
+        <div class="title">Resultado:</div>
+
+        <div class="result">
+          <div class="result-box">
+            <div class="category-row">
+              <div class="cat-icon"><i class="icon-info"></i></div>
+              <div>
+                <div style="font-size:13px;color:#6a8b8d;">Categoria:</div>
+                <div class="cat-text" id="categoria">—</div>
+              </div>
+            </div>
+
+            <div class="suggestions">
+              <div class="sugg-title"><i class="icon-envelope"></i> Sugestões de resposta:</div>
+              <ul class="sugg-list" id="respostasList">
+                <!-- itens inseridos via JS -->
+              </ul>
+            </div>
+
+            <button id="againBtn" class="send-again">Enviar outro email</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<script>
+  const fileInput = document.getElementById('fileInput');
+  const clearFileBtn = document.getElementById('clearFileBtn');
+  const submitBtn = document.getElementById('submitBtn');
+  const textInput = document.getElementById('textInput');
+
+  const formView = document.getElementById('form-view');
+  const resultView = document.getElementById('result-view');
+  const categoriaEl = document.getElementById('categoria');
+  const respostasList = document.getElementById('respostasList');
+  const againBtn = document.getElementById('againBtn');
+
+  // mostra botão limpar quando escolher arquivo
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length > 0) {
+      clearFileBtn.classList.remove('d-none');
+      // opcional: mostrar nome do arquivo no placeholder do textarea (comentado)
+      // textInput.placeholder = fileInput.files[0].name;
+    } else {
+      clearFileBtn.classList.add('d-none');
+    }
+  });
+
+  clearFileBtn.addEventListener('click', () => {
+    fileInput.value = "";
+    clearFileBtn.classList.add('d-none');
+  });
+
+  function flattenResponses(resp){
+    // resp can be: ["a","b","c"]  OR  [["a","b","c"]]  OR nested deeper
+    if (!resp) return [];
+    // if first element is array, flatten one level
+    if (Array.isArray(resp) && resp.length === 1 && Array.isArray(resp[0])) return resp[0];
+    // if array of arrays, flatten
+    if (Array.isArray(resp) && resp.some(r => Array.isArray(r))) return resp.flat();
+    return Array.isArray(resp) ? resp : [resp];
+  }
+
+  submitBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    // pega texto e arquivo
+    const formData = new FormData();
+    if (fileInput.files.length > 0) {
+      formData.append('arquivo', fileInput.files[0]);
+    }
+    formData.append('texto', textInput.value || "");
+
+    // desabilita botão enquanto processa
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Classificando...";
+
+    try {
+      const resp = await fetch('/classify', { method: 'POST', body: formData });
+      const data = await resp.json();
+
+      if (!resp.ok) {
+        alert(data.error || 'Erro no servidor');
+        return;
+      }
+
+      // normaliza possíveis formatos de resposta
+      let respostas = flattenResponses(data.respostas || data.resposta || []);
+
+      // limita a 3 e exibe
+      respostas = respostas.slice(0,3);
+
+      categoriaEl.textContent = data.categoria || '—';
+      respostasList.innerHTML = "";
+      respostas.forEach(r => {
+        const li = document.createElement('li');
+        li.textContent = r;
+        respostasList.appendChild(li);
+      });
+
+      // alterna para view de resultado
+      formView.style.display = 'none';
+      resultView.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    } catch (err) {
+      console.error(err);
+      alert('Erro ao conectar com o servidor.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Classificar";
+    }
+  });
+
+  againBtn.addEventListener('click', () => {
+    // reset visual e campos
+    formView.style.display = 'block';
+    resultView.style.display = 'none';
+    fileInput.value = "";
+    clearFileBtn.classList.add('d-none');
+    textInput.value = "";
+    respostasList.innerHTML = "";
+  });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Easiest Way to Add Input Masks to Your Forms</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="mb-4">Sistema de Classificação de Emails</h2>
+
+        <form id="emailForm" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="fileInput" class="form-label">Upload de arquivo (.txt ou .pdf)</label>
+                <input class="form-control" type="file" id="fileInput" name="arquivo" accept=".txt,.pdf">
+
+                <button type="button" id="clearFileBtn" class="btn btn-danger d-none">
+                    Remover arquivo
+                </button>
+            </div>
+
+            <div class="mb-3">
+                <label for="textInput" class="form-label">Ou digite o texto do email</label>
+                <textarea class="form-control" id="textInput" name="texto" rows="5"
+                    placeholder="Digite o texto do email aqui..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Classificar Email</button>
+        </form>
+
+        <div id="result" class="result-box d-none">
+            <h4>Resultado:</h4>
+            <p><strong>Categoria:</strong> <span id="categoria"></span></p>
+            <p><strong>Respostas sugeridas:</strong></p>
+            <ul id="respostasList"></ul>
+        </div>
+    </div>
+
+    </div>
+
+    <script>
+        const form = document.getElementById('emailForm');
+        const resultBox = document.getElementById('result');
+        const categoriaEl = document.getElementById('categoria');
+        const respostasList = document.getElementById('respostasList');
+        const fileInput = document.getElementById("fileInput");
+        const clearFileBtn = document.getElementById("clearFileBtn");
+
+        // Quando um arquivo for escolhido, mostrar o botão de remover
+        fileInput.addEventListener("change", () => {
+            if (fileInput.files.length > 0) {
+                clearFileBtn.classList.remove("d-none");
+            } else {
+                clearFileBtn.classList.add("d-none");
+            }
+        });
+
+        // Remover o arquivo selecionado
+        clearFileBtn.addEventListener("click", () => {
+            fileInput.value = "";      // limpa o input
+            clearFileBtn.classList.add("d-none"); // esconde o botão
+        });
+
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            const response = await fetch("/classify", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                alert("Erro: " + data.error);
+                return;
+            }
+
+            categoriaEl.textContent = data.categoria;
+            respostasList.innerHTML = "";
+            data.respostas.forEach(r => {
+                const li = document.createElement("li");
+                li.textContent = r;
+                respostasList.appendChild(li);
+            });
+
+            resultBox.classList.remove("d-none");
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+
+
